@@ -76,21 +76,19 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
 .scroll-hint { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: rgba(30,30,46,0.6); padding: 5px 12px; border-radius: 20px; pointer-events: none; white-space: nowrap; transition: opacity 0.3s; }
 .scroll-preview:hover .scroll-hint { opacity: 0; }
 
-.approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
-.approach-card { background: #f9f7f4; border: 1px solid #eee; border-radius: 12px; padding: 24px; transition: border-color 0.2s, transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease; opacity: 0; }
-.approach-card:nth-child(odd) { transform: translateX(-60px); }
-.approach-card:nth-child(even) { transform: translateX(60px); }
-.approach-card.visible { opacity: 1; transform: translateX(0) !important; }
-.approach-card:hover { border-color: #7b5ea7; }
-.approach-card-full { grid-column: 1 / -1; background: #1e1e2e; border-color: #1e1e2e; transform: translateY(40px) !important; }
-.approach-card-full.visible { transform: translateY(0) !important; }
-.approach-card-full .approach-num { color: #7b5ea7; }
-.approach-card-full .approach-card-title { color: #fdfcfa; }
-.approach-card-full .approach-card-desc { color: rgba(255,255,255,0.6); }
-.approach-num { font-size: 12px; font-weight: 700; color: #7b5ea7; letter-spacing: 1px; margin-bottom: 10px; }
-.approach-card-title { font-size: 16px; font-weight: 700; color: #1e1e2e; margin-bottom: 8px; }
-.approach-card-desc { font-size: 14px; line-height: 1.7; color: #666; margin: 0; }
-.case-footer { max-width: 860px; margin: 0 auto 80px; padding: 48px 64px 0; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; }
+
+
+
+
+
+
+
+
+
+
+
+
+
 .case-footer a { font-size: 14px; font-weight: 500; color: #888; text-decoration: none; transition: color 0.2s; }
 .case-footer a:hover { color: #1e1e2e; }
 
@@ -101,6 +99,14 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
   nav { padding: 12px 24px; }
   .before-after { flex-direction: column; }
 }
+
+.approach-list { margin-top: 16px; }
+.approach-item { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid #eee; align-items: baseline; }
+.approach-item:last-child { border-bottom: none; }
+.approach-item-num { font-size: 22px; font-weight: 700; color: #7b5ea7; width: 36px; flex-shrink: 0; line-height: 1; }
+.approach-item-content { flex: 1; }
+.approach-item-title { font-size: 15px; font-weight: 600; color: #1e1e2e; margin-bottom: 2px; }
+.approach-item-desc { font-size: 13px; color: #888; line-height: 1.6; margin: 0; }
 </style>
 </head>
 <body>
@@ -126,8 +132,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
     <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">Spring Education Group</span></div>
     <div class="meta-item"><span class="meta-label">My Role</span><span class="meta-value">UX Designer</span></div>
     <div class="meta-item"><span class="meta-label">Type</span><span class="meta-value">Conversion Rate Optimization</span></div>
-    <div class="meta-item"><span class="meta-label">Est. Financial Impact</span><span class="meta-value" style="color:#7b5ea7;font-weight:700;font-size:22px;letter-spacing:-1px;">$3M+ and counting</span></div>
-    <div class="meta-item"><span class="meta-label">Tests Run</span><span class="meta-value" style="color:#7b5ea7;font-weight:700;font-size:22px;letter-spacing:-1px;">30+ at 82% success</span></div>
+    <div class="meta-item"><span class="meta-label">Est. Financial Impact</span><span class="meta-value" style="color:#7b5ea7;font-weight:700;font-size:clamp(28px,4vw,48px);letter-spacing:-2px;line-height:1;">$3M+</span><span style="font-size:12px;color:#aaa;display:block;margin-top:2px;">and counting</span></div>
+    <div class="meta-item"><span class="meta-label">Tests Run</span><span class="meta-value" style="color:#7b5ea7;font-weight:700;font-size:clamp(28px,4vw,48px);letter-spacing:-2px;line-height:1;">30+</span><span style="font-size:12px;color:#aaa;display:block;margin-top:2px;">at 82% success rate</span></div>
   </div>
 </div>
 
@@ -148,7 +154,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
       <div class="section-divider"></div>
       <h2>Testing hypotheses, <em>not assumptions.</em></h2>
       <p>At Spring Education Group, I ran A/B tests across multiple brands and landing pages to identify what was hurting conversions and prove what would fix it. Each test started with a clear hypothesis grounded in UX principles and ended with data that either validated or challenged it.</p>
-      <p>Every change was intentional, every result was documented, and the financial impact was real.</p>
     </section>
 
     <section class="case-section" id="approach">
@@ -157,42 +162,14 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
       <h2>How I run <em>every test.</em></h2>
       <p>I don't run tests on hunches. Every experiment follows the same process — it starts with a real problem and ends with data that either proves or challenges what I thought I knew.</p>
 
-      <div class="approach-grid">
-        <div class="approach-card">
-          <div class="approach-num">01</div>
-          <div class="approach-card-title">Identify a problem</div>
-          <p class="approach-card-desc">Something isn't working. A page feels off, a metric is trending down, or user behavior doesn't add up. That's the starting point.</p>
-        </div>
-        <div class="approach-card">
-          <div class="approach-num">02</div>
-          <div class="approach-card-title">Find the data</div>
-          <p class="approach-card-desc">I compare year-over-year or month-over-month to validate the problem. Gut feelings don't make it to a brief - numbers do.</p>
-        </div>
-        <div class="approach-card">
-          <div class="approach-num">03</div>
-          <div class="approach-card-title">Synthesize with AI</div>
-          <p class="approach-card-desc">I use AI to process the data faster, spot patterns I might miss, and surface potential gaps. It's a thinking partner, not a shortcut.</p>
-        </div>
-        <div class="approach-card">
-          <div class="approach-num">04</div>
-          <div class="approach-card-title">Write the brief</div>
-          <p class="approach-card-desc">Before anything gets designed I document user behavior, a root cause analysis, and a clear hypothesis. If I can't write it down clearly, I'm not ready to test it.</p>
-        </div>
-        <div class="approach-card">
-          <div class="approach-num">05</div>
-          <div class="approach-card-title">Challenge my thinking</div>
-          <p class="approach-card-desc">I run my hypothesis back through AI to find holes in my reasoning. The goal is to be proven wrong before the test - not after.</p>
-        </div>
-        <div class="approach-card">
-          <div class="approach-num">06</div>
-          <div class="approach-card-title">Run the test</div>
-          <p class="approach-card-desc">Design, build, launch. The variant goes live and we let the data do the talking.</p>
-        </div>
-        <div class="approach-card approach-card-full">
-          <div class="approach-num">07</div>
-          <div class="approach-card-title">Reap the benefits 🎉</div>
-          <p class="approach-card-desc">Ship the winner, document the results, and use what we learned to inform the next test.</p>
-        </div>
+      <div class="approach-list">
+        <div class="approach-item"><div class="approach-item-num">01</div><div class="approach-item-content"><div class="approach-item-title">Identify a problem</div><p class="approach-item-desc">Something feels off. A metric is down, a page isn't converting, a pattern doesn't make sense.</p></div></div>
+        <div class="approach-item"><div class="approach-item-num">02</div><div class="approach-item-content"><div class="approach-item-title">Find the data</div><p class="approach-item-desc">YOY or month-over-month comparisons to back it up. Gut feelings don't make it to a brief.</p></div></div>
+        <div class="approach-item"><div class="approach-item-num">03</div><div class="approach-item-content"><div class="approach-item-title">Synthesize with AI</div><p class="approach-item-desc">Use AI to process faster, spot patterns, and surface gaps I might miss.</p></div></div>
+        <div class="approach-item"><div class="approach-item-num">04</div><div class="approach-item-content"><div class="approach-item-title">Write the brief</div><p class="approach-item-desc">User behavior, root cause analysis, clear hypothesis. If I can't write it clearly, I'm not ready to test.</p></div></div>
+        <div class="approach-item"><div class="approach-item-num">05</div><div class="approach-item-content"><div class="approach-item-title">Challenge my thinking</div><p class="approach-item-desc">Run the hypothesis back through AI. Find the holes before the test does.</p></div></div>
+        <div class="approach-item"><div class="approach-item-num">06</div><div class="approach-item-content"><div class="approach-item-title">Run the test</div><p class="approach-item-desc">Design, build, launch. Let the data talk.</p></div></div>
+        <div class="approach-item"><div class="approach-item-num">07</div><div class="approach-item-content"><div class="approach-item-title">Reap the benefits</div><p class="approach-item-desc">Ship the winner, document results, feed it into the next test.</p></div></div>
       </div>
     </section>
 
@@ -350,20 +327,6 @@ window.addEventListener('scroll', () => {
     if (l.getAttribute('href') === '#' + current) l.classList.add('active');
   });
 });
-
-// Approach cards scroll-in animation
-const approachCards = document.querySelectorAll('.approach-card');
-const cardObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, 80);
-      cardObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-approachCards.forEach(card => cardObserver.observe(card));
 
 document.querySelectorAll('.scroll-preview').forEach(function(preview) {
   var inner = preview.querySelector('.scroll-preview-inner');
