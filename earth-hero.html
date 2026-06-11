@@ -12,12 +12,8 @@ body { font-family: 'DM Sans', sans-serif; background: #fdfcfa; color: #1e1e2e; 
 
 /* ── CURSOR ── */
 *, *::before, *::after { cursor: none !important; }
-#cursor {
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 99999;
-  transform: translate(-50%, -50%);
-  width: 32px; height: 32px;
-}
+#cursor { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); }
+#cursor-dot { width: 8px; height: 8px; background: #1e1e2e; border-radius: 50%; }
 
 /* ── SCROLL OFFSET for sticky nav ── */
 .case-section {
@@ -375,10 +371,6 @@ nav {
 
 <div id="hero-photo">
   <div id="hero-photo-overlay"></div>
-  <div id="hero-photo-title">
-    <h2>Earth Hero</h2>
-    <p>Sustainability App — UX Research & Redesign</p>
-  </div>
 </div>
 <div id="page-content">
 <div id="cursor"><div id="cursor-dot"></div></div>
