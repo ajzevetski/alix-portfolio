@@ -10,10 +10,19 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: #fdfcfa; color: #1e1e2e; overflow-x: hidden; }
 
-#cursor { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); width: 8px; height: 8px; }
+#cursor { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); }
 #cursor-dot { width: 8px; height: 8px; background: #1e1e2e; border-radius: 50%; }
 
-nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: center; padding: 12px 64px; background: rgba(253,252,250,0.85); backdrop-filter: blur(12px); z-index: 100; min-height: 56px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  display: flex; align-items: center;
+  padding: 12px 64px;
+  background: rgba(253,252,250,0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100; min-height: 56px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
 .nav-logo { font-size: 18px; font-weight: 600; color: #1e1e2e; text-decoration: none; flex: 1; }
 .nav-center { flex: 0 0 auto; position: absolute; left: 50%; transform: translateX(-50%); }
 .avail { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #888; }
@@ -111,7 +120,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
 </head>
 <body>
 
-<div id="cursor"><div id="cursor-dot"></div></div>
+<div id="cursor"><div id="cursor-dot"></div></div></div>
 
 <nav>
   <a class="nav-logo" href="index.html">Alix with an i</a>
@@ -127,7 +136,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
 <div class="case-hero">
   <a class="back-link" href="index.html#work">← Back to Work</a>
   <h1 class="case-title">A/B <em>Tests.</em></h1>
-  <p class="case-subtitle">A collection of A/B tests I designed and ran at Spring Education Group across multiple brands. Each one started with a hypothesis and ended with data worth talking about.</p>
+  <p class="case-subtitle">A collection of A/B tests I designed and ran at Spring Education Group across multiple brands.</p>
   <div class="case-meta">
     <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">Spring Education Group</span></div>
     <div class="meta-item"><span class="meta-label">My Role</span><span class="meta-value">UX Designer</span></div>
@@ -153,7 +162,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: ce
       <span class="section-tag">Overview</span>
       <div class="section-divider"></div>
       <h2>Testing hypotheses, <em>not assumptions.</em></h2>
-      <p>At Spring Education Group, I ran A/B tests across multiple brands and landing pages to identify what was hurting conversions and prove what would fix it. Each test started with a clear hypothesis grounded in UX principles and ended with data that either validated or challenged it.</p>
+      <p>At Spring Education Group, I ran A/B tests across multiple brands and landing pages to identify what was hurting conversions and prove what would fix it.</p>
     </section>
 
     <section class="case-section" id="approach">
